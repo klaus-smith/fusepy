@@ -1,23 +1,18 @@
-from __future__ import print_function, absolute_import, division
-
-import logging
-
-from sys import argv, exit
-from time import time
-
+from __future__ import print_function
 import httplib2
 import os
-import sys
-import errno
-
-from fuse import FUSE, FuseOSError, Operations, LoggingMixIn
-
-from stat import S_IFDIR, S_IFREG
+import io
+from errno import EROFS
 
 from apiclient import discovery
 from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
+
+from stat import S_IFDIR, S_IFREG
+
+from fuse import FUSE, FuseOSError, Operations
+
 
 try:
     import argparse
