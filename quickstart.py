@@ -1,3 +1,6 @@
+# "Implement a Fuse Driver for Google Drive" from GNU/Linux Magazine HS N°90 by Sylvain Peyrefitte 
+# As a Passionate I love to buy IT Reviews and try to reproduce interesting article like this one !
+
 from __future__ import print_function
 import httplib2
 import os
@@ -20,7 +23,6 @@ try:
     flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
 except ImportError:
     flags = None
-
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/drive-python-quickstart.json
