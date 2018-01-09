@@ -1,5 +1,5 @@
-# "Implement a Fuse Driver for Google Drive" from GNU/Linux Magazine HS N°90 by Sylvain Peyrefitte 
-# As a Passionate I love to buy IT Reviews and try to reproduce interesting article like this one !
+# "Implement a Fuse Driver for Google Drive" from GNU/Linux Magazine France HS N°90 by Sylvain Peyrefitte 
+# As a Passionate I love to buy IT Reviews especially from GNU/Linux Magazine France and try to reproduce interesting article like this one !
 
 from __future__ import print_function
 import httplib2
@@ -24,6 +24,7 @@ try:
 except ImportError:
     flags = None
 
+# This is from Google Drive API documentation
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/drive-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly'
@@ -103,8 +104,9 @@ class GoogleDriveFS(Operations):
 	self.fh[fh].seek(offset)
 	return self.fh[fh].read(size)
 
+# Don't forget to create a directory in your favorite place
 def main():
-    FUSE(GoogleDriveFS(), "/tmp/test-fuse", nothreads=True, foreground=True)
+    FUSE(GoogleDriveFS(), "/tmp/booba", nothreads=True, foreground=True)
 
 if __name__ == '__main__':
     main()
